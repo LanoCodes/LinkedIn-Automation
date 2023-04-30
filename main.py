@@ -2,12 +2,9 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.options import Options
 import time, os, random
 
 random_sleep = [2, 3, 4]
-options = Options()
-options.add_experimental_option("detach", True)
 
 url_linkedin = "https://www.linkedin.com/jobs/search/?distance=25&f_AL=true&geoId=106224388&keywords=python%20developer&location=Atlanta%2C%20Georgia%2C%20United%20States&refresh=true&sortBy=R"
 
@@ -31,4 +28,5 @@ sign_in_button_1.click()
 job_save_btn = driver.find_element(By.XPATH, "//*[@id='main']/div/div[2]/div/div[2]/div[1]/div/div[1]/div/div[1]/div[1]/div[3]/div/button")
 job_save_btn.click()
 
-time.sleep(15)
+# this is for testing purposes, aimed at holding the launched window open for page inspection
+# time.sleep(15)
